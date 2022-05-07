@@ -1,5 +1,3 @@
-<h1 class="text-lg font-medium">Hello!</h1>
-<div class="before:bg-slate-600">
-	<p>My name is Evan Sheehan</p>
-	<p>Hopefull something cool will be here in the future!</p>
-</div>
+<h1 class="text-3xl font-bold text-accent-deep">Hello!</h1>
+<p class="text-accent-mid">My name is Evan Sheehan</p>
+<p class="text-accent-mid">Hopefully something cool will be here in the future!</p>

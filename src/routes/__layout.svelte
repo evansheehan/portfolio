@@ -2,6 +2,18 @@
 	import '../app.css';
 </script>
 
-<main class="relative bg-slate-800 p-8 rounded-md text-slate-300">
+<main class="relative bg-primary-mid p-8 rounded-md text-slate-300">
 	<slot />
 </main>
+
+<style global>
+	* {
+		font-family: 'Varela Round', sans-serif;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: 'Playfair Display', serif;
+	}
+</style>
