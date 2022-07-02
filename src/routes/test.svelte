@@ -14,8 +14,13 @@
 	}
 </script>
 
-<script>
-	import Nav from '$lib/nav.svelte';
+<script lang="ts">
+	import Expandable from '$lib/utils/Expandable.svelte';
 </script>
 
-<Nav />
+<div class="grid place-items-center grid-cols-2 gap-4 max-w-md aspect-square w-full">
+	<Expandable backgroundColorClass="bg-amber-500" title="About Me" />
+	<Expandable backgroundColorClass="bg-rose-500" title="Contact" />
+	<Expandable backgroundColorClass="bg-green-500" title="CV" />
+	<Expandable backgroundColorClass="bg-purple-500" title="Projects" />
+</div>
