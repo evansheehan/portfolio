@@ -15,12 +15,72 @@
 </script>
 
 <script lang="ts">
-	import Expandable from '$lib/utils/Expandable.svelte';
+	import Expandable from '$lib/Expandable.svelte';
+	import BackArrow from '$lib/icons/Back-Arrow.svelte';
+
+	enum Sections {
+		'about me',
+		'contact',
+		'cv',
+		'projects'
+	}
+
+	let selectedSection: Sections | undefined = undefined;
 </script>
 
 <div class="grid place-items-center grid-cols-2 gap-4 max-w-md aspect-square w-full">
-	<Expandable backgroundColorClass="bg-amber-500" title="About Me" />
-	<Expandable backgroundColorClass="bg-rose-500" title="Contact" />
-	<Expandable backgroundColorClass="bg-green-500" title="CV" />
-	<Expandable backgroundColorClass="bg-purple-500" title="Projects" />
+	{#if selectedSection === undefined}
+		<Expandable
+			on:click={() => (selectedSection = Sections['about me'])}
+			backgroundColorClass="bg-amber-500"
+			title="About Me"
+		/>
+		<Expandable
+			on:click={() => (selectedSection = Sections.contact)}
+			backgroundColorClass="bg-rose-500"
+			title="Contact"
+		/>
+		<Expandable
+			on:click={() => (selectedSection = Sections.cv)}
+			backgroundColorClass="bg-green-500"
+			title="CV"
+		/>
+		<Expandable
+			on:click={() => (selectedSection = Sections.projects)}
+			backgroundColorClass="bg-purple-500"
+			title="Projects"
+		/>
+	{/if}
+
+	{#if selectedSection === Sections['about me']}
+		<div
+			class="flex bg-amber-500 col-span-full row-span-full w-full h-full rounded-lg p-5 text-white"
+		>
+			<BackArrow on:click={() => (selectedSection = undefined)} />
+			<div class="text-xl font-semibold ml-8">About Me</div>
+		</div>
+	{:else if selectedSection === Sections.contact}
+		<div
+			class="flex bg-rose-500 col-span-full row-span-full w-full h-full rounded-lg p-5 text-white"
+		>
+			<BackArrow on:click={() => (selectedSection = undefined)} />
+			<div class="text-xl font-semibold ml-8">Contact</div>
+		</div>
+	{:else if selectedSection === Sections.cv}
+		<div
+			class="flex bg-green-500 col-span-full row-span-full w-full h-full rounded-lg p-5 text-white"
+		>
+			<BackArrow on:click={() => (selectedSection = undefined)} />
+			<div class="text-xl font-semibold ml-8">CV</div>
+		</div>
+	{:else if selectedSection === Sections.projects}
+		<div
+			class="flex bg-purple-500 col-span-full row-span-full w-full h-full rounded-lg p-5 text-white"
+		>
+			<BackArrow on:click={() => (selectedSection = undefined)} />
+			<div class="text-xl font-semibold ml-8">Projects</div>
+		</div>
+	{/if}
 </div>
+
+<!-- <div class="text-white">Oopsie! 🙁</div> -->
