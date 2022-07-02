@@ -25,7 +25,7 @@
 <div
 	class="fixed m-8 bg-white bg-opacity-5 max-w-xl p-8 backdrop-blur-sm shadow-subtle-highlight rounded-lg z-10 transition text-slate-100"
 >
-	<div class="relative flex gap-4">
+	<div class="relative flex flex-col sm:flex-row gap-4">
 		<div>
 			<p class="text-xl">Hello!</p>
 			<p>My name is Evan Sheehan</p>
@@ -41,7 +41,9 @@
 				interesting!! 🚧
 			</p>
 		</div>
-		<div class="top-0 bottom-0 flex-shrink-0 w-[2px] bg-white bg-opacity-50" />
+		<div
+			class="left-0 right-0 h-[2px] sm:h-auto sm:w-[2px] sm:top-0 sm:bottom-0 sm:left-auto sm:right-auto flex-shrink-0 bg-white bg-opacity-50"
+		/>
 		<div>
 			<button><a href="https://www.linkedin.com/in/richardevansheehan/"> LinkedIn </a></button>
 			<button><a href="https://github.com/evansheehan"> Github </a></button>
