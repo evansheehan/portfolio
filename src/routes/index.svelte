@@ -1,4 +1,5 @@
 <script lang="ts">
+	import resume from '$lib/assets/evan-sheehan-resume.pdf';
 	let cursor: HTMLDivElement;
 
 	const CURSOR_PADDING = 8;
@@ -45,8 +46,9 @@
 			class="left-0 right-0 h-[2px] sm:h-auto sm:w-[2px] sm:top-0 sm:bottom-0 sm:left-auto sm:right-auto flex-shrink-0 bg-white bg-opacity-50"
 		/>
 		<div>
-			<button><a href="https://www.linkedin.com/in/richardevansheehan/"> LinkedIn </a></button>
-			<button><a href="https://github.com/evansheehan"> Github </a></button>
+			<a href="https://www.linkedin.com/in/richardevansheehan/"><button> LinkedIn</button> </a>
+			<a href="https://github.com/evansheehan"><button> Github </button></a>
+			<a href={resume}><button>CV</button></a>
 			<!-- <button>Download CV</button> -->
 			<!-- <div bind:this={cursor} class="cursor" /> -->
 		</div>
